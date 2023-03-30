@@ -1,6 +1,4 @@
-import styleStrToObj from "./styleStrToObj";
+import { styleStrToObj } from "./styleStrToObj";
+import { isEmptyObject } from "./is-empty-object";
 
-
-export {
-    styleStrToObj
-}
+export { styleStrToObj, isEmptyObject };

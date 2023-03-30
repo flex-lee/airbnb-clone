@@ -5,6 +5,8 @@ import { ThemeProvider } from "styled-components";
 import { Provider } from "react-redux";
 
 import App from "@/App";
+// 插件重置样式
+import "normalize.css";
 //自定义css
 import "@/assets/css/index.less";
 //导入redux

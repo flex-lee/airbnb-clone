@@ -1,3 +1,4 @@
+import IconLike from '@/assets/svg/icon_like'
 import IconStar from '@/assets/svg/icon_star'
 import PropTypes from 'prop-types'
 import React, { memo } from 'react'
@@ -6,10 +7,16 @@ import { RoomItemWrapper } from './style'
 const RoomItem = memo((props) => {
     const { roomItem, itemWidth = "33.33%" } = props
     return (
-        <RoomItemWrapper itemWidth={itemWidth} verifyColor={roomItem.verify_info.text_color ?? "#929292"}>
+        <RoomItemWrapper itemWidth={itemWidth} verifyColor={roomItem.verify_info.text_color ?? "#929292"} starColor={roomItem.star_rating_color}>
             <div className='inner'>
                 <div className='cover'>
                     <img src={roomItem.picture_url} alt="" />
+                    {
+                        roomItem?.bottom_info && <span className='info'>{roomItem.bottom_info.content}</span>
+                    }
+                    <span className='like'>
+                        <IconLike />
+                    </span>
                 </div>
                 <div className="detail">
                     <div className='verifyInfo'>

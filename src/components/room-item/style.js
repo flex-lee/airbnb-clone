@@ -1,8 +1,11 @@
 import styled from "styled-components";
 
 export const RoomItemWrapper = styled.div`
+  flex-shrink: 0;
   width: ${(props) => props.itemWidth};
-  margin: 16px 0;
+  margin-top: 16px;
+  box-sizing: border-box;
+  padding: 8px;
   cursor: pointer;
   .inner {
     width: 100%;
@@ -20,6 +23,22 @@ export const RoomItemWrapper = styled.div`
         top: 0;
         width: 100%;
         height: 100%;
+      }
+      .info {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        padding: 2px 5px;
+        border-radius: 6px;
+        background-color: #fff;
+        font-weight: 700;
+        font-size: 10px;
+        color: #767676;
+      }
+      .like {
+        position: absolute;
+        top: 10px;
+        right: 10px;
       }
     }
     .detail {
@@ -40,6 +59,7 @@ export const RoomItemWrapper = styled.div`
         .rating {
           display: flex;
           .star {
+            color: ${(props) => props.starColor};
             margin-right: 5px;
             display: flex;
             align-items: center;
@@ -57,10 +77,10 @@ export const RoomItemWrapper = styled.div`
       .price {
         font-weight: 700;
         margin-bottom: 10px;
-        .night{
-            font-weight: lighter;
-            margin-left: 5px;
-            font-size: 12px;
+        .night {
+          font-weight: lighter;
+          margin-left: 5px;
+          font-size: 12px;
         }
       }
     }

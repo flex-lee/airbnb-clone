@@ -1,6 +1,17 @@
-import {getHomeGoodPriceData} from "./home";
-
+import {
+  getHomeGoodPriceData,
+  getHomeHighScore,
+  getHomePopular,
+  getHomeHotCommendDest,
+  getHomeLongFor,
+  getHomePlus,
+} from "./home";
 
 export {
-    getHomeGoodPriceData
-}
+  getHomeGoodPriceData,
+  getHomeHighScore,
+  getHomePopular,
+  getHomeHotCommendDest,
+  getHomeLongFor,
+  getHomePlus,
+};

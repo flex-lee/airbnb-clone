@@ -1,4 +1,4 @@
-function styleStrToObj(css) {
+export function styleStrToObj(css) {
     var obj = {}, s = css.toLowerCase().replace(/-(.)/g, function (m, g) {
         return g.toUpperCase();
     }).replace(/;\s?$/g,"").split(/:|;/g);
@@ -7,4 +7,3 @@ function styleStrToObj(css) {
     return obj;
 }
 
-export default styleStrToObj;
