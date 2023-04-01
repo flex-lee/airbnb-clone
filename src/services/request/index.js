@@ -31,4 +31,6 @@ class LFRequest {
   }
 }
 
-export default new LFRequest(BASE_URL, TIMEOUT);
+const LfRequest = new LFRequest(BASE_URL, TIMEOUT);
+
+export default LfRequest;

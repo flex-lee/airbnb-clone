@@ -7,6 +7,8 @@ import {
   getHomePlus,
 } from "./home";
 
+import { getEntireAllList } from "./entire";
+
 export {
   getHomeGoodPriceData,
   getHomeHighScore,
@@ -14,4 +16,6 @@ export {
   getHomeHotCommendDest,
   getHomeLongFor,
   getHomePlus,
+
+  getEntireAllList,
 };
