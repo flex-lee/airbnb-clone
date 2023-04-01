@@ -1,8 +1,14 @@
 import styled from "styled-components";
 
 export const EntireSearchWrapper = styled.div`
+  position: sticky;
+  top: 81px;
+  left: 0;
+  right: 0;
   padding: 0 40px;
   border-bottom: 1px solid rgb(238, 238, 238);
+  background-color: #fff;
+  z-index: 9;
   .item {
     min-width: 70px;
     flex-shrink: 0;
