@@ -1,5 +1,5 @@
 import React, { memo } from 'react'
-import { useSelector } from 'react-redux'
+import { shallowEqual, useSelector } from 'react-redux'
 
 import { EntireListWrapper } from './style'
 import RoomItem from '@/components/room-item'
@@ -10,7 +10,7 @@ const EntireList = memo(() => {
         roomList: state.entire.infoList,
         totalCount: state.entire.totalCount,
         isLoading: state.entire.isLoading
-    }))
+    }),shallowEqual)
     return (
         <EntireListWrapper>
             <div className="title">{totalCount}多所住所</div>
@@ -18,7 +18,7 @@ const EntireList = memo(() => {
                 {
                     roomList.map(item => {
                         return (
-                            <RoomItem roomItem={item} itemWidth={"20%"} />
+                            <RoomItem key={item._id} roomItem={item} itemWidth={"20%"} />
                         )
                     })
                 }

@@ -11,12 +11,12 @@ export const RoomItemWrapper = styled.div`
     width: 100%;
     font-size: 16px;
     line-height: 20px;
+    position: relative;
     .cover {
       position: relative;
       padding: 80% 0 0;
       border-radius: 6px;
       overflow: hidden;
-      margin-bottom: 10px;
       img {
         position: absolute;
         left: 0;
@@ -25,24 +25,76 @@ export const RoomItemWrapper = styled.div`
         height: 100%;
         object-fit: cover;
       }
-      .info {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        padding: 2px 5px;
-        border-radius: 6px;
-        background-color: #fff;
-        font-weight: 700;
-        font-size: 10px;
-        color: #767676;
+    }
+    .slider {
+      position: relative;
+      &:hover {
+        .prevent,
+        .next {
+          background-image: linear-gradient(
+            -180deg,
+            rgba(0, 0, 0, 0) 3%,
+            rgb(0, 0, 0, 0.3) 100%
+          );
+          z-index: 1;
+        }
       }
-      .like {
+      .prevent,
+      .next {
         position: absolute;
-        top: 10px;
-        right: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        span {
+          margin: 0 20px;
+        }
+      }
+      .prevent {
+        top: 0;
+        left: 0;
+        bottom: 0;
+      }
+      .next {
+        top: 0;
+        right: 0;
+        bottom: 0;
+      }
+      .cover {
+        position: relative;
+        padding: 80% 0 0;
+        border-radius: 6px;
+        box-sizing: border-box;
+        overflow: hidden;
+        img {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
       }
     }
+    .info {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      padding: 2px 5px;
+      border-radius: 6px;
+      background-color: #fff;
+      font-weight: 700;
+      font-size: 10px;
+      color: #767676;
+    }
+    .like {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 2;
+    }
     .detail {
+      margin-top: 10px;
       .verifyInfo {
         margin-bottom: 10px;
         display: flex;
