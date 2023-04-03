@@ -1,3 +1,4 @@
+import Demo from "@/view/demo";
 import React from "react";
 import { Navigate } from "react-router-dom";
 
@@ -21,6 +22,10 @@ const routes = [
   {
     path: "/entire/:name",
     element: <Entire />,
+  },
+  {
+    path: "/demo",
+    element: <Demo />,
   },
 ];
 

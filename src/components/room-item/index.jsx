@@ -1,14 +1,18 @@
 import IconLike from '@/assets/svg/icon_like'
 import IconStar from '@/assets/svg/icon_star'
 import PropTypes from 'prop-types'
-import React, { memo, useRef } from 'react'
+import React, { memo, useRef, useState } from 'react'
 import { Carousel } from 'antd'
 
 import { RoomItemWrapper } from './style'
 import IconLeftArrow from '@/assets/svg/icon-left-arrow'
 import IconRightArrow from '@/assets/svg/icon-right-arrow'
+import Indicator from '@/base-ui/indicator'
+import classNames from 'classnames'
 
 const RoomItem = memo((props) => {
+
+    const [selectIndex, setSelectIndex] = useState(0);
     const { roomItem, itemWidth = "33.33%" } = props
 
     const carouselRef = useRef()
@@ -17,7 +21,10 @@ const RoomItem = memo((props) => {
     /**点击切换图片函数处理 */
     function changeImgHandle(isNext) {
         isNext ? carouselRef.current.next() : carouselRef.current.prev()
-
+        let newIndex = isNext ? selectIndex + 1 : selectIndex - 1
+        if (newIndex < 0) newIndex = roomItem.picture_urls.length - 1
+        if (newIndex > roomItem.picture_urls.length - 1) newIndex = 0
+        setSelectIndex(newIndex)
     }
 
     // 判断是否需要展示slider
@@ -38,6 +45,17 @@ const RoomItem = memo((props) => {
                 <span>
                     <IconRightArrow size={30} />
                 </span>
+            </div>
+            <div className='indicator'>
+                <Indicator selectIndex={selectIndex}>
+                    {
+                        roomItem?.picture_urls?.map((item, index) => {
+                            return <div key={item} className='dot_item'>
+                                <span className={classNames('dot', { active: selectIndex === index })}></span>
+                            </div>
+                        })
+                    }
+                </Indicator>
             </div>
             <Carousel dots={false} ref={carouselRef}>
                 {

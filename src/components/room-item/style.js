@@ -60,6 +60,33 @@ export const RoomItemWrapper = styled.div`
         right: 0;
         bottom: 0;
       }
+      .indicator {
+        position: absolute;
+        bottom: 30px;
+        left: 0;
+        right: 0;
+        width: 30%;
+        margin: 0 auto;
+        z-index: 1;
+        .dot_item {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 20%;
+          .dot {
+            width: 6px;
+            height: 6px;
+            background-color: #fff;
+            opacity: .6;
+            border-radius: 50%;
+            &.active {
+              width: 8px;
+              height: 8px;
+             opacity: 1;
+            }
+          }
+        }
+      }
       .cover {
         position: relative;
         padding: 80% 0 0;
